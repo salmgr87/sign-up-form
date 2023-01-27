@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    
+}
+
+.left {
+    flex-basis: 40%;
+    background-image: url(halie-west-25xggax4bSA-unsplash.jpg);
+    background-size: 100% auto;
+    
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.left-content {
+    position: relative;
+    bottom: 14vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20,20,20,0.5);
+    width: 100%;
+}
+
+.logo-image {
+    max-width: 4rem;
+}
+
+.logo {
+    color: white;
+    font-size: 54px;
+}
+
+.right {
+    flex-basis: 60%;
+}
