@@ -52,13 +52,16 @@
                         <div class='row2'>
                             <div>
                                 <label for="password1">PASSWORD</label>
-                                <input type="password" name="password1" id="password1" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&:;,.?/~_+-=|\]).{8,32}$" placeholder=" "/>
-                                <span></span>
+                                <input type="password" name="password1" id="password1" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$" placeholder=" "/>
+                                <span>One uppercase <span class='upper'></span></span>
+                                <div>One lowercase <span class='lower'></span></div>
+                                <div>One digit <span class='digit'></span></div>
+                                <div>8-32 characters <span class='characters'></span></div>
                             </div>
                             <div>
                                 <label for="password2">CONFIRM PASSWORD</label>
-                                <input type='password' name='password2' id='password2' required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&:;,.?/~_+-=|\]).{8,32}$" placeholder=" "/>
-                                <span class='confirm'></span>
+                                <input type='password' name='password2' id='password2' required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$" placeholder=" "/>
+                                <span class='confirm'>Passwords must match</span>
                             </div>
                         </div>
                     </div>
@@ -76,29 +79,66 @@
         const password1 = document.getElementById('password1')
         const password2 = document.getElementById('password2')
         const confirm = document.querySelector('.confirm')
+        const upper = document.querySelector(".upper")
+        const lower = document.querySelector(".lower")
+        const digit = document.querySelector('.digit');
+        const characters = document.querySelector('.characters');
+        const upperPattern = /[A-Z]/;
+        const lowerPattern = /[a-z]/;
+        const digitPattern = /\d/;
 
         password1.addEventListener('input', (e) => {
+            if (upperPattern.test(password1.value)) {
+                upper.textContent = "✓";
+            } else {
+                upper.textContent = '';
+            }
+
+            if (lowerPattern.test(password1.value)) {
+                lower.textContent = "✓";
+            } else {
+                lower.textContent = '';
+            }
+
+            if (digitPattern.test(password1.value)) {
+                digit.textContent = "✓";
+            } else {
+                digit.textContent = '';
+            }
+
+            if (password1.value.length >= 8 && password1.value.length <=32) {
+                characters.textContent = '✓';
+            } else {
+                characters.textContent = '';
+            }
+
             if (password1.value === password2.value) {
-                confirm.textContent = 'Yay';
+                confirm.textContent = 'Passwords match ✓';
                 password1.setCustomValidity('');
                 password2.setCustomValidity('');
             } else {
-                confirm.textContent = 'Password must match';
-                password1.setCustomValidity('Password must match');
-                password2.setCustomValidity('Password must match');
+                confirm.textContent = 'Passwords must match';
+                password1.setCustomValidity('Passwords must match');
+                password2.setCustomValidity('Passwords must match');
             }
         })
 
         password2.addEventListener('input', (e) => {
-            if (password1.value === password2.value) {
-                confirm.textContent = 'Yay';
+            if (password1.value === '' && password2.value ==='') {
+                confirm.textContent = 'Passwords must match';
+                password1.setCustomValidity('Passwords must match');
+                password2.setCustomValidity('Passwords must match');
+            }
+            
+            else if (password1.value === password2.value) {
+                confirm.textContent = 'Passwords match ✓';
                 password1.setCustomValidity('');
                 password2.setCustomValidity('');
             }
             else {
-                confirm.textContent = 'Password must match';
-                password1.setCustomValidity('Password must match');
-                password2.setCustomValidity('Password must match');
+                confirm.textContent = 'Passwords must match';
+                password1.setCustomValidity('Passwords must match');
+                password2.setCustomValidity('Passwords must match');
             }
         })
 
