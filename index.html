@@ -28,37 +28,37 @@
                         <div class='row1'>
                             <div>
                                 <label for="fname">FIRST NAME</label>
-                                <input type="text" name="fname" id="fname"/>
+                                <input type="text" name="fname" id="fname" required placeholder=" "/>
                                 <span></span>
                             </div>
                             <div>
                                 <label for="lname">LAST NAME</label>
-                                <input type='text' name='lname' id='lname'/>
+                                <input type='text' name='lname' id='lname' required placeholder=" "/>
                                 <span></span>
                             </div>
                         </div>
                         <div class='row1'>
                             <div>
                                 <label for="email">EMAIL</label>
-                                <input type="email" name="email" id="email"/>
+                                <input type="email" name="email" id="email" required placeholder=" "/>
                                 <span></span>
                             </div>
                             <div>
                                 <label for="phone">PHONE NUMBER</label>
-                                <input type='tel' name='phone' id='phone'/>
+                                <input type='tel' name='phone' id='phone' required placeholder=" " pattern="(\d{3})([-.\s])?(\d{3})([-.\s])?(\d{4})"/>
                                 <span></span>
                             </div>
                         </div>
                         <div class='row2'>
                             <div>
                                 <label for="password1">PASSWORD</label>
-                                <input type="password" name="password1" id="password1"/>
+                                <input type="password" name="password1" id="password1" required placeholder=" "/>
                                 <span></span>
                             </div>
                             <div>
                                 <label for="password2">CONFIRM PASSWORD</label>
-                                <input type='password' name='password2' id='password2'/>
-                                <span></span>
+                                <input type='password' name='password2' id='password2' required placeholder=" "/>
+                                <span class='confirm'></span>
                             </div>
                         </div>
                     </div>
@@ -71,4 +71,30 @@
             </div>
         </div>
     </body>
+
+    <script>
+        const password1 = document.getElementById('password1')
+        const password2 = document.getElementById('password2')
+        const confirm = document.querySelector('.confirm')
+
+        password1.addEventListener('input', (e) => {
+            if (password1.value === password2.value) {
+                confirm.textContent = 'Yay';
+            } else {
+                confirm.textContent = '';
+                password1.setCustomValidity('');
+            }
+        })
+
+        password2.addEventListener('input', (e) => {
+            if (password1.value === password2.value) {
+                confirm.textContent = 'Yay';
+            }
+            else {
+                confirm.textContent = '';
+            }
+        })
+
+    </script>
+
 </html>
