@@ -41,8 +41,6 @@
 
 .right {
     flex-basis: 60%;
-    
-    
 }
 
 .description {
@@ -86,4 +84,23 @@ label {
 input, label {
     display: block;
     width: 18vw;
+}
+
+.button-container {
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+button {
+    background-color: #596D48;
+    padding: 1em 3em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px lightgrey;
+}
+
+.account {
+    padding-left: 2rem;
+    padding-bottom: 2rem;
 }
