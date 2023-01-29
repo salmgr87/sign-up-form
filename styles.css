@@ -36,4 +36,39 @@
 
 .right {
     flex-basis: 60%;
+    
+    
+}
+
+.description {
+    background-color: #f9fafb;
+    padding: 2rem;
+}
+
+form {
+    padding: 0 2rem;
+}
+
+.row1 {
+    display: flex;
+    background-color: khaki;
+    justify-content:space-around;
+    
+}
+
+.row2 {
+    display: flex;
+    background-color: khaki;
+    justify-content:space-around;
+    padding: 0 0 2em 0;
+}
+
+label {
+    margin: 10% 50px 0 0;
+    
+}
+
+input, label {
+    display: block;
+    width: 15vw;
 }
