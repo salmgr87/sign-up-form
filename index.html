@@ -52,12 +52,13 @@
                         <div class='row2'>
                             <div>
                                 <label for="password1">PASSWORD</label>
-                                <input type="password" name="password1" id="password1" required placeholder=" "/>
+                                <input type="password" name="password1" id="password1" required pattern='^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[.!@$%^&:;,.?/~_+-=|\]).{8,32}$' placeholder=" "/>
                                 <span></span>
                             </div>
                             <div>
                                 <label for="password2">CONFIRM PASSWORD</label>
-                                <input type='password' name='password2' id='password2' required placeholder=" "/>
+                                <input type='password' name='password2' id='password2' required pattern='^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[.!@$%^&:;,.?/~_+-=|\]).{8,32}$' placeholder=" "/>
+                                <!-- Pattern: At least one upper, at least one lower, at least one digit, at least one special charater that is not a bracket-->
                                 <span class='confirm'></span>
                             </div>
                         </div>
@@ -80,18 +81,25 @@
         password1.addEventListener('input', (e) => {
             if (password1.value === password2.value) {
                 confirm.textContent = 'Yay';
-            } else {
-                confirm.textContent = '';
                 password1.setCustomValidity('');
+                password2.setCustomValidity('');
+            } else {
+                confirm.textContent = 'Password must match';
+                password1.setCustomValidity('Password must match');
+                password2.setCustomValidity('Password must match');
             }
         })
 
         password2.addEventListener('input', (e) => {
             if (password1.value === password2.value) {
                 confirm.textContent = 'Yay';
+                password1.setCustomValidity('');
+                password2.setCustomValidity('');
             }
             else {
-                confirm.textContent = '';
+                confirm.textContent = 'Password must match';
+                password1.setCustomValidity('Password must match');
+                password2.setCustomValidity('Password must match');
             }
         })
 
