@@ -83,6 +83,28 @@ label {
     color: rgb(86, 86, 86);
 }
 
+input {
+    appearance: none;
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    font-size: 16px;
+    
+}
+
+
+
+input:focus, input:active {
+    outline: 2px solid #596D48;
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
+
+input:invalid:not(:placeholder-shown) {
+    outline: 2px solid red;
+}
+
+
+
 button {
     background-color: #596D48;
     padding: 1em 3em;
@@ -156,22 +178,7 @@ button {
 
     }
 
-    input {
-        appearance: none;
-        border: 1px solid #E5E7EB;
-        border-radius: 5px;
-        font-size: 16px;
-        
-    }
 
-    input:focus, input:active {
-        outline: 2px solid #596D48;
-        box-shadow: 5px 5px 5px lightgrey;
-    }
-
-    input:invalid:not(:placeholder-shown) {
-        outline: 2px solid red;
-    }
 
     input, label {
         display: block;
