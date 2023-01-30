@@ -38,25 +38,25 @@
                             </div>
                         </div>
                         <div class='row1'>
-                            <div>
+                            <div class='fill'>
                                 <label for="email">EMAIL</label>
                                 <input type="email" name="email" id="email" required placeholder=" "/>
-                                <span></span>
+                                <span class='datahelp' data-help="C'mon man, it's your email@domain.com"></span>
                             </div>
-                            <div>
+                            <div class='fill'>
                                 <label for="phone">PHONE NUMBER</label>
                                 <input type='tel' name='phone' id='phone' required placeholder=" " pattern="(\d{3})([-.\s])?(\d{3})([-.\s])?(\d{4})"/>
-                                <span></span>
+                                <span class='datahelp' data-help="E.g. 234-345-4567"></span>
                             </div>
                         </div>
                         <div class='row2'>
                             <div>
                                 <label for="password1">PASSWORD</label>
                                 <input type="password" name="password1" id="password1" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$" placeholder=" "/>
-                                <span>One uppercase <span class='upper'></span></span>
-                                <div>One lowercase <span class='lower'></span></div>
-                                <div>One digit <span class='digit'></span></div>
-                                <div>8-32 characters <span class='characters'></span></div>
+                                <span class='checked'>One uppercase <span class='upper'></span></span>
+                                <div class='checked'>One lowercase <span class='lower'></span></div>
+                                <div class='checked'>One digit <span class='digit'></span></div>
+                                <div class='checked'>8-32 characters <span class='characters'></span></div>
                             </div>
                             <div>
                                 <label for="password2">CONFIRM PASSWORD</label>

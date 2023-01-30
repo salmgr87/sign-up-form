@@ -35,10 +35,17 @@
     max-width: 4rem;
 }
 
+@font-face {
+    font-family: norse;
+    src: url(Norse-Bold.otf);
+}
+
 .logo {
     color: white;
     font-size: 54px;
-    
+    font-family: norse, sans-serif;
+    position: relative;
+    top: 7px;
 }
 
 .right {
@@ -80,13 +87,17 @@ form {
 
 label {
     margin: 10% 50px 0 0;
-    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    color: rgb(86, 86, 86);
 }
 
 input {
     appearance: none;
     border: 1px solid #E5E7EB;
     border-radius: 5px;
+    font-size: 16px;
+    
 }
 
 input:focus, input:active {
@@ -113,8 +124,10 @@ input:invalid:not(:placeholder-shown) + span:before {
 
 .datahelp {
     position: absolute;
-    margin-top: 0.25rem;
+    margin-top: 0.3rem;
     font-size: 10px;
+    font-style: italic;
+    color: rgb(86, 86, 86);
 }
 
 .button-container {
@@ -134,4 +147,10 @@ button {
 .account {
     padding-left: 2rem;
     padding-bottom: 2rem;
+}
+
+.checked, .confirm {
+    font-size: 10px;
+    font-style: italic;
+    color: rgb(86, 86, 86);
 }
