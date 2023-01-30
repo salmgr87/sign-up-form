@@ -26,15 +26,15 @@
                     <div class='middle'>
                         <h3>Let's do this!</h3>
                         <div class='row1'>
-                            <div>
+                            <div class='fill'>
                                 <label for="fname">FIRST NAME</label>
-                                <input type="text" name="fname" id="fname" required placeholder=" "/>
-                                <span></span>
+                                <input type="text" name="fname" id="fname" pattern="^[^0-9]+$" required placeholder=" "/>
+                                <span class='datahelp' data-help='Unless your name is C3PO, no numbers!'></span>
                             </div>
-                            <div>
+                            <div class='fill'>
                                 <label for="lname">LAST NAME</label>
-                                <input type='text' name='lname' id='lname' required placeholder=" "/>
-                                <span></span>
+                                <input type='text' name='lname' id='lname' pattern="^[^0-9]+$" required placeholder=" "/>
+                                <span class='datahelp' data-help="Unless your last name is D2, try again R2."></span>
                             </div>
                         </div>
                         <div class='row1'>
