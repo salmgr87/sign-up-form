@@ -1,38 +1,18 @@
+/* Odin Project said not to worry about mobile, so I'm doing this after 
+finishing the desktop version. I would normally do the mobile version first,
+then properly add the @media query for larger screens. That's why this looks
+a bit sloppy. */
+
 * {
     margin: 0;
     padding: 0;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.container {
-    display: flex;
-    background-color: #f9fafb;
-}
 
-.left {
-    flex-basis: 40%;
-    background-image: url(halie-west-25xggax4bSA-unsplash.jpg);
-    background-size: 100% auto;
-    
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.left-content {
-    position: relative;
-    bottom: 14vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(20,20,20,0.5);
-    width: 100%;
-}
 
 .logo-image {
-    max-width: 4rem;
+    max-width: 4em;
 }
 
 @font-face {
@@ -45,11 +25,27 @@
     font-size: 54px;
     font-family: norse, sans-serif;
     position: relative;
-    top: 7px;
+    top: 1.4rem;
 }
 
-.right {
-    flex-basis: 60%;
+
+.left {
+    background-image: url(halie-west-25xggax4bSA-unsplash.jpg);
+    background-size: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.left-content {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(20,20,20,0.5);
+    width: 100%;
+    position: relative;
 }
 
 .description {
@@ -58,11 +54,7 @@
 }
 
 h3 {
-    padding: 0 0 0 2rem;
-}
-
-form {
-    
+    padding: 0 0 2rem 2rem;
 }
 
 .middle {
@@ -72,67 +64,23 @@ form {
     padding-right: 10vw;
 }
 
+input, label {
+    display: block;
+}
+
 .row1 {
-    display: flex;
-    justify-content:space-between;
     margin-left: 2rem;
 }
 
 .row2 {
-    display: flex;
     margin-left: 2rem;
-    justify-content:space-between;
     padding: 0 0 2em 0;
 }
 
 label {
-    margin: 10% 50px 0 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
     color: rgb(86, 86, 86);
-}
-
-input {
-    appearance: none;
-    border: 1px solid #E5E7EB;
-    border-radius: 5px;
-    font-size: 16px;
-    
-}
-
-input:focus, input:active {
-    outline: 2px solid #596D48;
-    box-shadow: 5px 5px 5px lightgrey;
-}
-
-input:invalid:not(:placeholder-shown) {
-    outline: 2px solid red;
-}
-
-input, label {
-    display: block;
-    width: 18vw;
-}
-
-input:invalid:not(:placeholder-shown) + span:before {
-    content: attr(data-help);
-}
-
-.fill {
-    position: relative;
-}
-
-.datahelp {
-    position: absolute;
-    margin-top: 0.3rem;
-    font-size: 10px;
-    font-style: italic;
-    color: rgb(86, 86, 86);
-}
-
-.button-container {
-    padding-left: 2rem;
-    padding-bottom: 2rem;
 }
 
 button {
@@ -144,13 +92,123 @@ button {
     box-shadow: 0 5px 10px lightgrey;
 }
 
-.account {
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-}
+@media only screen and (min-width: 768px) {
 
-.checked, .confirm {
-    font-size: 10px;
-    font-style: italic;
-    color: rgb(86, 86, 86);
+
+    .container {
+        display: flex;
+        background-color: #f9fafb;
+    }
+
+    .left {
+        flex-basis: 40%;
+        background-image: url(halie-west-25xggax4bSA-unsplash.jpg);
+        background-size: 100% auto;
+        
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .left-content {
+        position: relative;
+        bottom: 14vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(20,20,20,0.5);
+        width: 100%;
+    }
+
+    .logo-image {
+        max-width: 4rem;
+    }
+
+    .logo {
+        top: 7px;
+    }
+
+    .right {
+        flex-basis: 60%;
+    }
+
+    h3 {
+        padding: 0 0 0 2rem;
+    }
+
+    .row1 {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        
+    }
+
+    .row2 {
+        display: flex;
+        justify-content:space-between;
+        
+    }
+
+    label {
+        margin: 10% 50px 0 0;
+
+    }
+
+    input {
+        appearance: none;
+        border: 1px solid #E5E7EB;
+        border-radius: 5px;
+        font-size: 16px;
+        
+    }
+
+    input:focus, input:active {
+        outline: 2px solid #596D48;
+        box-shadow: 5px 5px 5px lightgrey;
+    }
+
+    input:invalid:not(:placeholder-shown) {
+        outline: 2px solid red;
+    }
+
+    input, label {
+        display: block;
+        width: 18vw;
+    }
+
+    input:invalid:not(:placeholder-shown) + span:before {
+        content: attr(data-help);
+    }
+
+    .fill {
+        position: relative;
+    }
+
+    .datahelp {
+        position: absolute;
+        margin-top: 0.3rem;
+        font-size: 10px;
+        font-style: italic;
+        color: rgb(86, 86, 86);
+    }
+
+    .button-container {
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+    }
+
+
+
+    .account {
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .checked, .confirm {
+        font-size: 10px;
+        font-style: italic;
+        color: rgb(86, 86, 86);
+    }
 }

@@ -53,7 +53,7 @@
                             <div>
                                 <label for="password1">PASSWORD</label>
                                 <input type="password" name="password1" id="password1" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$" placeholder=" "/>
-                                <span class='checked'>One uppercase <span class='upper'></span></span>
+                                <div class='checked'>One uppercase <span class='upper'></span></div>
                                 <div class='checked'>One lowercase <span class='lower'></span></div>
                                 <div class='checked'>One digit <span class='digit'></span></div>
                                 <div class='checked'>8-32 characters <span class='characters'></span></div>
@@ -112,7 +112,13 @@
                 characters.textContent = '';
             }
 
-            if (password1.value === password2.value) {
+            if (password1.value === '' && password2.value ==='') {
+                confirm.textContent = 'Passwords must match';
+                password1.setCustomValidity('Passwords must match');
+                password2.setCustomValidity('Passwords must match');
+            }
+
+            else if (password1.value === password2.value) {
                 confirm.textContent = 'Passwords match ✓';
                 password1.setCustomValidity('');
                 password2.setCustomValidity('');
